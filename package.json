@@ -1,0 +1,30 @@
+{
+  "name": "mpesuppeachserver",
+  "version": "1.0.0",
+  "description": "Peach Payments Integration Server",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpesuhealth/MpesuPeachServer.git"
+  },
+  "author": "Hilario Junior Nengare and Lambda Research",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mpesuhealth/MpesuPeachServer/issues"
+  },
+  "homepage": "https://github.com/mpesuhealth/MpesuPeachServer#readme",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "card-validator": "^10.0.2",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "node-fetch": "^3.3.2"
+  }
+}
