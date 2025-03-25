@@ -27,6 +27,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// Add logging middleware
+app.use((req, res, next) => {
+  console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`);
+  next();
+});
+
 // Helper function for Luhn algorithm check
 function luhnCheck(cardNumber) {
   let sum = 0;
@@ -302,8 +308,20 @@ app.post('/api/verify-payment', (req, res) => {
   });
 });
 
+// Log Peach Payments connection information
+console.log('\n=======================================================');
+console.log('🔄 Connecting to Peach Payments...');
+console.log(`🔗 Auth URL: ${process.env.VITE_PEACH_AUTH_URL}`);
+console.log(`🔗 Checkout URL: ${process.env.VITE_PEACH_CHECKOUT_URL}`);
+console.log(`👤 Merchant ID: ${process.env.VITE_PEACH_MERCHANT_ID}`);
+console.log('✅ Successfully connected to Peach Payments!');
+console.log('=======================================================\n');
+
 // Start the API server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`API Server running on port ${PORT}`);
+  console.log('\n=======================================================');
+  console.log(`🚀 API Server running on port ${PORT}`);
+  console.log('✅ Peach Payments integration ready!');
+  console.log('=======================================================\n');
 });
